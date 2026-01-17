@@ -1,3 +1,7 @@
+![Pharos Testnet](https://img.shields.io/badge/Network-Pharos%20Atlantic-blue)
+![Version](https://img.shields.io/badge/Version-v0-yellow)
+![License](https://img.shields.io/badge/License-MIT-green) 
+
 # 🌊 Pharos Activity Oracle
 
 > A versioned on-chain oracle tracking real user activity on **Pharos Atlantic Testnet**.  
@@ -37,12 +41,11 @@
 
 ---
 
-## 🛠 Deployment
-- **Network:** Pharos Atlantic Testnet  
-- **Contract Name:** `PharosActivity_Legacy`  
-- **Address:** `0x8cece077e055224cccd2682d6714dac167196660`  
-- **Verified on PharosScan**
-
+### 🛠 Deployment
+- **Network:** `Pharos Atlantic Testnet`
+- **Contract:** `PharosActivity_Legacy`
+- **Address:** `0x8cece077e055224cccd2682d6714dac167196660`
+- **Verified:** ✔️ PharosScan
 ---
 
 ## 📌 Status
