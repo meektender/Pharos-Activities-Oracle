@@ -1,41 +1,64 @@
-# # Pharos Activity Oracle Project 🚀
+# 🌊 Pharos Activity Oracle
 
-👨‍💻 **Developer: [meektender]**
-* **Role:** Smart Contract Architect
-* **Status:** Active Builder
-* **Network:** Pharos Atlantic Testnet
-
-📍 **v0: Legacy Documentation (INITIALIZE)**
-
-**Deployed:** Jan 2026 | **Status:** 🟢 Verified & Tested
-**Contract Address:** `[0x8cece077e055224cccd2682d6714dac167196660`
-
-**Innovation: "Interaction Verification"** The foundation of the Pharos Activity Oracle. This version establishes the core logic for identifying and logging unique wallet interactions within the Pharos Atlantic ecosystem.
-
-**Technical Fix:** Implemented a lightweight event-emission architecture to ensure real-time tracking of multi-wallet testing data while maintaining low gas overhead on the testnet.
+> A versioned on-chain oracle tracking real user activity on **Pharos Atlantic Testnet**.  
+> Designed for progressive upgrades: **v0 → v1 → v2 → v3**.
 
 ---
 
-### 🛠 v0 Feature Set
-* **Wallet Tracking:** Identification of unique active addresses.
-* **Event Emission:** Optimized logs for off-chain indexing.
-* **Stress Tested:** Verified via multi-wallet interaction loops.
-
-### ⚠️ v0 Limitations (Technical Debt)
-* **Cooldown:** Currently lacks a time-based buffer between interactions.
-* **Anti-Spam:** No rate-limiting logic implemented in this build.
-* **Automation:** Requires manual triggers for state updates.
+## 🚀 Overview
+- **Purpose:** Record & verify real user interactions
+- **Approach:** Start minimal → observe → upgrade progressively
+- **Versioned:** Each version is immutable and serves a clear purpose
 
 ---
 
-### 🕒 Version History
+## 📦 Versions
 
-| Version | Focus | Status |
-| :--- | :--- | :--- |
-| **v0** | Legacy Docs / Basic Tracking | **Current** |
-| **v1** | Cooldown & Anti-Spam Logic | *Planned* |
+| Version | Focus |
+|---------|-------|
+| **v0 (Legacy)** | Baseline interaction, multi-wallet tracking |
+| **v1** | 1-hour cooldown, anti-spam |
+| **v2** | Rule-based interaction policies |
+| **v3** | Hook automation & extensions |
 
 ---
 
-### 🚀 Next Step:
-I am currently architecting the **v1 Cooldown Upgrade**, which will introduce logic to prevent transaction spamming and prepare the oracle for automated data feeds.
+## 🧱 v0 Features
+- ✅ Track unique wallets  
+- ✅ Emit events for every interaction  
+- ✅ Multi-wallet interaction confirmed  
+
+### ⚠ Limitations
+- ❌ No cooldown  
+- ❌ No anti-spam  
+- ❌ No automation  
+
+> *Limitations are intentional — foundation for upgrades.*
+
+---
+
+## 🛠 Deployment
+- **Network:** Pharos Atlantic Testnet  
+- **Contract Name:** `PharosActivity_Legacy`  
+- **Address:** `0x8cece077e055224cccd2682d6714dac167196660`  
+- **Verified on PharosScan**
+
+---
+
+## 📌 Status
+- v0 deployed & verified  
+- Multi-wallet interaction tested  
+- Preparing **v1 cooldown** upgrade  
+
+---
+
+## 👤 Builder Notes
+- Learning on-chain by building  
+- Following **ecosystem best practices**  
+- Focused on **clarity, progression, and traceability**
+
+---
+
+## 🔜 Next Step
+- Implement **v1 cooldown (1-hour)**  
+- Keep v0 immutable for reference
