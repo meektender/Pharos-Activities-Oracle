@@ -1,80 +1,45 @@
-Overview
-Pharos Activity Oracle is an iterative, on-chain project built on the Pharos Atlantic Testnet to study and record real user interaction behavior.
-The project follows a versioned development model:
-Start with a minimal, verifiable baseline (v0)
-Observe real on-chain usage
-Introduce controlled upgrades (v1, v2, v3…)
-This repository is designed to reflect real protocol development practices, not testnet farming.
-Design Philosophy
-Most on-chain systems fail because they start complex.
-This project starts simple on purpose:
-One responsibility per version
-Clear limitations documented
-No assumptions
-No skipped steps
-Each version exists for a specific reason and is never rewritten or hidden.
-Versioning Strategy
+🌊 Overview
+Pharos Activity Oracle explores how real user interactions can be recorded, verified, and extended on-chain.
+Instead of starting complex, the project begins with a minimal legacy baseline, then evolves through clearly documented versions — mirroring how real-world protocols are built.
+🧠 Design Approach
+Start small
+Observe real behavior
+Add constraints gradually
+Never rewrite history
+Each version solves one clear problem.
+🧩 Versioning Model
 Version
-Purpose
+Focus
 v0 (Legacy)
-Baseline interaction validation
+Baseline interaction tracking
 v1
-Cooldown & basic anti-spam
+Cooldown & anti-spam logic
 v2
-Policy-based interaction rules
+Policy-driven rules
 v3
-Hook / automation compatibility
-Older versions remain immutable and serve as historical references.
-v0 — Legacy Baseline
-Objective
-v0 exists to validate one thing only:
-Can multiple independent wallets interact with a contract and produce verifiable on-chain signals?
-What v0 Does
-Records whether an address has interacted
-Counts unique interacting addresses
-Emits an event for every interaction
-What v0 Does NOT Do
-❌ No cooldown
-❌ No spam prevention
-❌ No permissions
-❌ No automation
-These limitations are intentional.
-Deployment (v0)
+Automation & hooks
+🧱 v0 — Legacy Baseline
+Goal:
+Establish a trusted on-chain reference for user interaction.
+Capabilities:
+Detects first-time interactions
+Tracks unique users
+Emits transparent on-chain events
+This version is intentionally simple and serves as the foundation for all future upgrades.
+🚀 Deployment (v0)
 Network: Pharos Atlantic Testnet
-Contract Name: PharosActivity_Legacy
-Contract Address:
+Contract: PharosActivity_Legacy
+Address:
 0x8cece077e055224cccd2682d6714dac167196660
-Verification
-Contract source verified on PharosScan
-On-chain behavior matches repository source
-This deployment serves as the canonical reference for all future upgrades.
-Verified Behavior
-The following behaviors have been confirmed on-chain:
-Interaction from multiple EOAs
-Accurate unique user counting
-Consistent event emission
-Transparent state changes
-Why v0 Matters
-In real protocol engineering:
-You validate assumptions before adding constraints
-You observe behavior before enforcing rules
-You build trust through simplicity
-v0 establishes credibility and traceability.
-Roadmap
-v1 — Cooldown Enforcement
-Time-based interaction limit (1 hour)
-Prevent rapid repeat calls
-Preserve v0 structure
-v2 — Policy Layer
-Configurable interaction rules
-Extensible logic
-v3 — Automation / Hooks
-Compatibility with programmable hooks
-Event-driven extensions
-Status
-Stage: v0 complete & verified
-Network: Pharos Atlantic Testnet
-Next milestone: v1 (Cooldown)
-Builder Note
-This project is maintained as a learning-by-building exercise aligned with real ecosystem standards.
-Focus is on quality, clarity, and progression, not volume.
+Verified and auditable on PharosScan.
+🛣️ Roadmap
+v1: Time-based cooldown (1 hour)
+v2: Rule-based interaction policies
+v3: Hook-compatible automation
+Each version builds forward without replacing the past.
+📌 Current Status
+v0 deployed & verified
+Multi-wallet interactions confirmed
+Preparing v1 upgrade
+👤 Builder
+Independent builder learning through real on-chain execution, aligned with Pharos ecosystem principles
