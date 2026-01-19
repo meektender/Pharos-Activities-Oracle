@@ -9,7 +9,24 @@ real activity tracking, anti-spam mechanics, and protocol-style upgrades from **
 
 > Built step-by-step as a learning + production-grade reference, not copy-paste farming.
 
----
+## Version v3 – Automation & Hooks
+
+**Purpose**
+- Prepare the oracle for automated systems and off-chain integrations
+
+**What changed from v2**
+- Emits activity events for bots, indexers, and hooks
+- Keeps the same core cooldown logic
+- No added state complexity
+
+**Why it matters**
+- Enables automation without breaking legacy logic
+- Ready for future policy engines and hook-based extensions
+
+**Status**
+- Deployed
+- Tagged
+- Final testnet iteration before policy expansion
 
 ## 🔗 Deployed Contract (v1)
 
