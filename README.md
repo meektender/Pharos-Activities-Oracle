@@ -2,99 +2,57 @@
 ![Version](https://img.shields.io/badge/Version-v0-yellow)
 ![License](https://img.shields.io/badge/License-MIT-green) 
 
-# Pharos Activities Oracle
+# Pharos Activities Oracle – v0 → v4
 
-A progressive on-chain oracle project built on **Pharos Atlantic Testnet**, designed to demonstrate
-real activity tracking, anti-spam mechanics, and protocol-style upgrades from **v0 → v1 → vN**.
-
-> Built step-by-step as a learning + production-grade reference, not copy-paste farming.
-
-## Version v3 – Automation & Hooks
-
-**Purpose**
-- Prepare the oracle for automated systems and off-chain integrations
-
-**What changed from v2**
-- Emits activity events for bots, indexers, and hooks
-- Keeps the same core cooldown logic
-- No added state complexity
-
-**Why it matters**
-- Enables automation without breaking legacy logic
-- Ready for future policy engines and hook-based extensions
-
-**Status**
-- Deployed
-- Tagged
-- Final testnet iteration before policy expansion
-
-## 🔗 Deployed Contract (v1)
-
-- **Network:** Pharos Atlantic Testnet  
-- **Contract Address:**  
-  `0xeab1ef3191df26565a86f50cab21dc2b6b20b4b0`
-- **Status:** ✅ Deployed & Verified on PharosScan
+## Project Mission
+- Track real user activity — anti-bot, anti-spam
+- Enable upgradeable features (v0 → v5)
+- Integrate with ecosystem assets (e.g., Gotchipus NFTs, Hooks SDK)
+- Show builder signal — clean, verified, reusable code
+- Document everything — no guesswork
 
 ---
 
-## 🧱 Project Structure
+## Version Summary
 
-| Version | Name | Description | Status |
-|------|------|------------|--------|
-| v0 | Legacy Oracle | Basic activity recording (no limits) | Documented |
-| v1 | Cooldown Oracle | Adds 1-hour per-wallet cooldown | ✅ Live |
-| v2 | Planned | Role / weight-based activity | ⏳ |
-| v3 | Planned | Aggregated oracle logic | ⏳ |
-
----
-
-## ⚙️ v1 — Cooldown Upgrade
-
-### What Changed from v0
-- Introduced **1-hour cooldown per wallet**
-- Prevents spam & artificial activity
-- Enforces **real on-chain behavior**
-- Emits structured on-chain events
-
-### Core Rule
-> A wallet can only record activity **once every 1 hour**
+| Version | Purpose / Feature | Notes |
+|---------|-----------------|-------|
+| **v0 – Legacy** | Baseline interaction tracking | Minimal logic, foundation for upgrades |
+| **v1 – Cooldown & Anti-Spam** | Per-wallet cooldown tracking | Owner-controlled, ready for inheritance |
+| **v2 – Policy-Driven Rules** | Inherits v1 | Same logic as v1, inheritance-ready, no extra features yet |
+| **v3 – Automation / Hook Ready** | Inherits v2 | Emits activity events for future hook integration, keeps cooldown logic intact |
+| **v4 – NFT-Gated Activity** | Inherits v3 | Requires Gotchipus NFT ownership to record activity, adds ecosystem gating without breaking previous behavior |
 
 ---
 
-## 🧪 How It Works
+## Contract Features
 
-1. User calls `recordActivity()`
-2. Contract checks last interaction timestamp
-3. If cooldown passed → activity recorded
-4. If not → transaction reverts
+### Owner-Controlled Cooldown
+- Owner can set per-wallet cooldown (`setCooldown`)
+- Prevents spam interactions
+- Tracks `lastActionTime` per user
 
----
+### Activity Recording
+- `recordActivity()` available in v0 → v4
+- Emits `ActivityRecorded` event in v3 and v4
+- v4 requires Gotchipus NFT ownership
 
-## 📡 Key Functions
-
-| Function | Description |
-|------|------------|
-| `recordActivity()` | Records user activity (with cooldown check) |
-| `lastInteraction(address)` | Stores last action time |
-| `timeUntilNextAction(address)` | Returns remaining cooldown time |
-
----
-
-## 🧠 Design Philosophy
-
-- No farming logic
-- No fake volume
-- No copy-paste templates
-- Progressive upgrades like real protocols
-- Built publicly for transparency & learning
+### NFT / Ecosystem Gating (v4)
+- Checks `balanceOf(msg.sender)` from Gotchipus NFT contract
+- Only NFT holders can call `recordActivity`
+- Ensures ecosystem-level gating
 
 ---
 
-## 🚀 Roadmap
+## Deployment Notes
 
-- **v2:** Role-based or weighted activity scoring  
-- **v3:** Multi-source oracle aggregation  
-- **v4+:** Ecosystem hooks & governance signals
+| Version | Network | Owner Wallet | Cooldown (s) | Gotchipus NFT Address | Deployed Address |
+|---------|---------|--------------|--------------|---------------------|----------------|
+| v1      | Testnet | `0xd3aF179f0e6d13C9435A468AE1F21d8D240973ed` | 3600 | N/A | `0xb4739dbbf0853ff85ad64fbe87326ee0804385ca.` |
+| v2      | Testnet | `0xd3aF179f0e6d13C9435A468AE1F21d8D240973ed` | 3600 | N/A | `0x3f0c199e022e4e7be20aa9529dc61f1a04246b1f` |
+| v3      | Testnet | `0xd3aF179f0e6d13C9435A468AE1F21d8D240973ed` | 3600 | N/A | `0xb4739dbbf0853ff85ad64fbe87326ee0804385ca` |
+| v4      | Testnet | `0xd3aF179f0e6d13C9435A468AE1F21d8D240973ed` | 3600 | `0x000000007b5758541e9d94a487b83e11cd052437` | `0xc619D1aC1dCeA9a067CfB50B9C690aA71c17cAcB` |
+
 
 ---
 
